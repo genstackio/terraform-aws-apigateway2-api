@@ -11,3 +11,4 @@ module "api" {
   name       = "my-api-name"
   lambda_arn = "arn:the-arn-of-the-lambda-here"
 }
+```
