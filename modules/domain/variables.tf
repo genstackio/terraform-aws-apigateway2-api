@@ -2,7 +2,7 @@ variable "api" {
   type = string
 }
 variable "stage" {
-  type    = string
+  type = string
 }
 variable "dns" {
   type = string
