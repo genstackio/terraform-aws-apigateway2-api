@@ -8,6 +8,10 @@ variable "protocol" {
 variable "lambda_arn" {
   type = string
 }
+variable "lambda_invoke_arn" {
+  type    = string
+  default = null
+}
 variable "cors" {
   type    = bool
   default = false
