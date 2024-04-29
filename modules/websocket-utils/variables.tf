@@ -7,3 +7,11 @@ variable "lambda_invoke_arn" {
 variable "lambda_arn" {
   type = string
 }
+variable "throttling_burst_limit" {
+  type    = number
+  default = 2000
+}
+variable "throttling_rate_limit" {
+  type    = number
+  default = 1000
+}

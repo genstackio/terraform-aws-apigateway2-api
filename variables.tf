@@ -34,3 +34,11 @@ variable "cors_config" {
     max_age           = 300
   }
 }
+variable "throttling_burst_limit" {
+  type    = number
+  default = 2000
+}
+variable "throttling_rate_limit" {
+  type    = number
+  default = 1000
+}

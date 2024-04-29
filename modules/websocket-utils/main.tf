@@ -68,6 +68,8 @@ resource "aws_apigatewayv2_stage" "ws_api_message_stage_default" {
 
   default_route_settings {
     data_trace_enabled = true
+    throttling_rate_limit = var.throttling_rate_limit
+    throttling_burst_limit = var.throttling_burst_limit
   }
 
   depends_on = [aws_apigatewayv2_integration.ws_api_integration]
