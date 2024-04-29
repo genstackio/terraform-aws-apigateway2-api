@@ -60,3 +60,15 @@ resource "aws_apigatewayv2_route_response" "ws_api_message_route_response" {
   route_id           = aws_apigatewayv2_route.ws_api_message_route.id
   route_response_key = "$default"
 }
+
+resource "aws_apigatewayv2_stage" "ws_api_message_stage_default" {
+  api_id      = var.apigw_id
+  name        = "$default"
+  auto_deploy = true
+
+  default_route_settings {
+    data_trace_enabled = true
+  }
+
+  depends_on = [aws_apigatewayv2_integration.ws_api_integration]
+}
