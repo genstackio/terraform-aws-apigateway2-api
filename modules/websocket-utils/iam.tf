@@ -9,13 +9,13 @@ data "aws_iam_policy_document" "ws_api_gateway_policy" {
 }
 
 resource "aws_iam_policy" "ws_api_gateway_policy" {
-  name   = "WsAPIGatewayPolicy"
+  name   = "WsAPIGatewayPolicy_${var.name}"
   path   = "/"
   policy = data.aws_iam_policy_document.ws_api_gateway_policy.json
 }
 
 resource "aws_iam_role" "ws_api_gateway_role" {
-  name = "WsAPIGatewayRole"
+  name = "WsAPIGatewayRole_${var.name}"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"

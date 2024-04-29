@@ -31,6 +31,7 @@ module "ws_utils" {
   apigw_id          = aws_apigatewayv2_api.api.id
   lambda_arn        = var.lambda_arn
   lambda_invoke_arn = var.lambda_invoke_arn
+  name              = var.name
   throttling_burst_limit = var.throttling_burst_limit
   throttling_rate_limit  = var.throttling_rate_limit
 }
