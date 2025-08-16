@@ -30,6 +30,9 @@ resource "aws_iam_role" "ws_api_gateway_role" {
       },
     ]
   })
+}
 
-  managed_policy_arns = [aws_iam_policy.ws_api_gateway_policy.arn]
+resource "aws_iam_role_policy_attachment" "ws_api_gateway_role_policy" {
+  policy_arn = aws_iam_policy.ws_api_gateway_policy.arn
+  role = aws_iam_role.ws_api_gateway_role.name
 }
